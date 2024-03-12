@@ -43,11 +43,13 @@ class _postPageState extends State<postPage> {
 
               return Container(
                 child: ListView.builder(
-                  itemCount: successState.posts.length,
+                  itemCount: successState.posts[0].carts.length,
                   itemBuilder: (context, index) {
+                    print(successState.posts.length);
                     return ListTile(
+                      title: Text('narendra'),
                       leading: Text(
-                          '${successState.posts[index].carts.length} ${successState.posts[index].carts[index].userId} ${successState.posts[index].carts[index].products[index].title}'),
+                          '${successState.posts[0].carts.length} ${successState.posts[0].carts[0].userId} ${successState.posts[0].carts[0].products[0].title}'),
 
                       // title: Text(successState.posts[index].total.toString()),
                     );

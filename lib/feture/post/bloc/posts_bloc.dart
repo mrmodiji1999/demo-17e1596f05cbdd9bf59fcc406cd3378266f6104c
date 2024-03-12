@@ -33,6 +33,7 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
         emit(PostFetchScuess(posts: posts));
       } else if (responseData is Map<String, dynamic>) {
         PostDataModel post = PostDataModel.fromMap(responseData);
+        posts.add(post);
 
         emit(PostFetchScuess(posts: [post]));
       } else {
